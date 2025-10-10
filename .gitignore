@@ -1,0 +1,90 @@
+# ==============================
+# Node.js / TypeScript projects
+# ==============================
+node_modules/
+dist/
+build/
+.cache/
+.next/
+out/
+coverage/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ==============================
+# Environment & local configs
+# ==============================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# AWS / Deployment
+.aws-sam/
+.vercel/
+.serverless/
+.tmp/
+
+# ==============================
+# IDEs / OS / Tools
+# ==============================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Monorepo (Turborepo / Nx)
+# ==============================
+.turbo/
+.nx/
+**/.turbo/
+**/.nx/
+
+# ==============================
+# Shared packages / build cache
+# ==============================
+packages/*/dist/
+apps/*/dist/
+apps/*/.next/
+apps/*/.turbo/
+apps/*/node_modules/
+
+# ==============================
+# Unity plugin (C#)
+# ==============================
+unity-plugin/Library/
+unity-plugin/Temp/
+unity-plugin/Obj/
+unity-plugin/Build/
+unity-plugin/Builds/
+unity-plugin/Logs/
+unity-plugin/UserSettings/
+unity-plugin/.vs/
+unity-plugin/*.csproj
+unity-plugin/*.sln
+unity-plugin/*.user
+unity-plugin/*.pidb
+unity-plugin/*.unityproj
+unity-plugin/*.suo
+unity-plugin/.idea/
+unity-plugin/.gradle/
+unity-plugin/.DS_Store
+
+# ==============================
+# Miscellaneous
+# ==============================
+*.tsbuildinfo
+*.swp
+*.bak
+*.tmp
+*.lock
