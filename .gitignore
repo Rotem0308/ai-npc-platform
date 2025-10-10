@@ -88,3 +88,8 @@ unity-plugin/.DS_Store
 *.bak
 *.tmp
 *.lock
+
+# Docker Compose (local dev only)
+docker-compose.yml
+pgdata/
+.env.example

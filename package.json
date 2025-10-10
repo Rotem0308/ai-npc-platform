@@ -4,7 +4,11 @@
   "description": "\"# ai-npc-platform\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:frontend": "cd apps/frontend && npm run dev",
+    "dev:backend": "cd apps/backend && npm run start:dev",
+    "dev:docker": "docker-compose up -d --build",
+    "stop:docker": "docker-compose down",
+    "logs:docker": "docker-compose logs -f"
   },
   "repository": {
     "type": "git",
