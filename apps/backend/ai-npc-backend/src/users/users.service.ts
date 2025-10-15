@@ -3,7 +3,7 @@ import { UsersRepository } from './users.repository';
 import { UserMapper } from './user.mapper';
 import { UserEntity } from './entities/user';
 import { RegisterDTO } from 'src/auth/dtos/register.dto';
-import { Role } from 'generated/prisma';
+import { Role } from '@prisma/client';
 
 @Injectable()
 export class UsersService {

@@ -14,7 +14,7 @@ jest.mock('@prisma/client', () => {
   };
 });
 // Mock the generated Role enum globally
-jest.mock('../generated/prisma', () => ({
+jest.mock('@prisma/client', () => ({
   Role: {
     USER: 'USER',
     ADMIN: 'ADMIN',

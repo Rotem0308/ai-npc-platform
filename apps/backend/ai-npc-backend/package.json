@@ -22,6 +22,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@google/genai": "^1.24.0",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
@@ -69,8 +70,7 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "^src/(.*)$": "<rootDir>/$1",
-      "^generated/prisma(.*)$": "<rootDir>/../generated/prisma$1"
+      "^src/(.*)$": "<rootDir>/$1"
     },
     "setupFilesAfterEnv": [
       "<rootDir>/../test/jest.setup.ts"

@@ -3,7 +3,7 @@ import { AuthService } from './auth.service';
 import { UsersService } from '../users/users.service';
 import { PasswordService } from './services/password.service';
 import { JwtService } from '@nestjs/jwt';
-import { Role } from 'generated/prisma';
+import { Role } from '@prisma/client';
 
 describe('AuthService', () => {
   let authService: AuthService;
