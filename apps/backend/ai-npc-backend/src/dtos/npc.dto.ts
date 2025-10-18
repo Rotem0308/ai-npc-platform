@@ -11,9 +11,4 @@ export class NpcDto {
 
   @IsString()
   personality: string;
-
-  @IsArray()
-  @ValidateNested({ each: true })
-  @Type(() => DialogueDto)
-  dialogue: DialogueDto[];
 }

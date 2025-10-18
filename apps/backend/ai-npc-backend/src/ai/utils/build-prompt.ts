@@ -37,26 +37,20 @@ export function buildScriptableObjectPrompt(jsonData: FormDto) {
  * in the system instruction.
  */
 export function buildJsonPrompt(formData: FormDto) {
-  const { name, role, personality, dialogue } = formData.npc;
-  const { title, description, objectives, rewards, difficulty, connections } =
-    formData.quest;
+  const { name, role, personality } = formData.npc;
+  const { title, description } = formData.quest;
   return `
-Generate a structured JSON response strictly following the response schema.
+    Generate a structured JSON response strictly following the response schema.
+    use the net setting in your response as this is the user request for this
+    properties to be part of the response:
+    
+    NPC Data:
+    - Name: ${name}
+    - Role: ${role}
+    - Personality: ${personality}
 
-NPC Data:
-- Name: ${name}
-- Role: ${role}
-- Personality: ${personality}
-- Dialogue Lines: ${JSON.stringify(dialogue.map((dialog: DialogueDto, index: number) => ({ id: index + 1, text: dialog.text })))}
-
-Quest Data:
-- Title: ${title}
-- Description: ${description}
-- Objectives: ${JSON.stringify(objectives)}
-- Rewards: ${JSON.stringify(rewards)}
-- Difficulty: ${difficulty}
-- Connections: ${JSON.stringify([connections])}
-
-Return **only valid JSON** matching the schema.
-`;
+    Quest Data:
+    - Title: ${title}
+    - Description: ${description}
+  `;
 }

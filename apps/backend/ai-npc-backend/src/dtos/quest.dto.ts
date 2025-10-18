@@ -8,19 +8,4 @@ export class QuestDto {
 
   @IsString()
   description: string;
-
-  @IsArray()
-  @IsString({ each: true })
-  objectives: string[];
-
-  @IsArray()
-  @IsString({ each: true })
-  rewards: string[];
-
-  @IsEnum(DifficultyEnum)
-  difficulty: DifficultyEnum;
-
-  @IsArray()
-  @IsString({ each: true })
-  connections: string[];
 }

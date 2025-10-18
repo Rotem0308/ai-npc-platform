@@ -69,6 +69,7 @@ export class GeminiService implements OnModuleInit {
   initialJsonSystemIstructions() {
     this.jsonSystemInstruction = systemInstructionJson;
   }
+
   initialScriptableObjectSystemIstructions() {
     const sysInsturction = systemInstructionScriptableObject;
     const sysInsturctionWithSchema = replaceDynamicContentWithData(
