@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+
 import { Iceberg } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
 
 const iceberg = Iceberg({
   subsets: ["latin"],
@@ -25,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${iceberg.className}`}>
         <main>{children}</main>
+        <Toaster theme="light" richColors={true} />
       </body>
     </html>
   );

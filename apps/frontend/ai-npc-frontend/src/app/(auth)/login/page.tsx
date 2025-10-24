@@ -1,12 +1,11 @@
 "use client";
-import { loginSchema, LoginSchema } from "@/app/schemas/login.schema";
+import { loginSchema, LoginSchema } from "@/schemas/login.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -14,6 +13,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
+import { ApiRoutes } from "@/config/api-routes.config";
+import { http } from "@/services/http.service";
 
 const LoginPage = () => {
   const loginForm = useForm<LoginSchema>({
@@ -25,9 +26,8 @@ const LoginPage = () => {
   });
 
   async function onSubmit(values: LoginSchema) {
-    await new Promise((resolve) =>
-      setTimeout(() => console.log(resolve("")), 5000)
-    );
+    const baseUrl = new URL(ApiRoutes.auth.login);
+    const res = await http.post(baseUrl, values);
   }
 
   return (

@@ -3,7 +3,7 @@ import { HttpOptions } from "@/types/http.type";
 class HttpService {
   constructor() {}
 
-  private async request(url: URL, options: HttpOptions = {}) {
+  private async request(url: URL | string, options: HttpOptions = {}) {
     try {
       const response = await fetch(url, options);
       if (!response.ok) {
@@ -25,12 +25,12 @@ class HttpService {
     return response;
   }
   // GET
-  async get(url: URL, options: HttpOptions = {}) {
+  async get(url: URL | string, options: HttpOptions = {}) {
     return this.request(url, { ...options, method: "GET", cache: "default" });
   }
 
   // POST
-  async post(url: URL, body: any, options: HttpOptions = {}) {
+  async post(url: URL | string, body: any, options: HttpOptions = {}) {
     return this.request(url, {
       ...options,
       method: "POST",
@@ -40,7 +40,7 @@ class HttpService {
   }
 
   // PUT
-  async put(url: URL, body: any, options: HttpOptions = {}) {
+  async put(url: URL | string, body: any, options: HttpOptions = {}) {
     return this.request(url, {
       ...options,
       method: "PUT",
@@ -50,7 +50,7 @@ class HttpService {
   }
 
   // PATCH
-  async patch(url: URL, body: any, options: HttpOptions = {}) {
+  async patch(url: URL | string, body: any, options: HttpOptions = {}) {
     return this.request(url, {
       ...options,
       method: "PATCH",
@@ -60,7 +60,7 @@ class HttpService {
   }
 
   // DELETE
-  async delete(url: URL, options: HttpOptions = {}) {
+  async delete(url: URL | string, options: HttpOptions = {}) {
     return this.request(url, { ...options, method: "DELETE" });
   }
 

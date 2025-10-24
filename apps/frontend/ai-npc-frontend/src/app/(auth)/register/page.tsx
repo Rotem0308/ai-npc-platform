@@ -1,12 +1,11 @@
 "use client";
-import { registerSchema, RegisterSchema } from "@/app/schemas/register.schema";
+import { registerSchema, RegisterSchema } from "@/schemas/register.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -25,6 +24,7 @@ import { RoleValues } from "@/constants/user.const";
 import { Role } from "@/enums/user.enum";
 import { http } from "@/services/http.service";
 import { isRequired } from "@/utils/form.util";
+import { ApiRoutes } from "@/config/api-routes.config";
 
 const RegisterPage = () => {
   const registerForm = useForm<RegisterSchema>({
@@ -38,15 +38,8 @@ const RegisterPage = () => {
   });
 
   async function onSubmit(values: RegisterSchema) {
-    console.log(process.env.NEXT_PUBLIC_BACKEND_API_URL);
-    if (http.isValidUrl(process.env.NEXT_PUBLIC_BACKEND_API_URL)) {
-      const baseUrl = new URL(
-        process.env.NEXT_PUBLIC_BACKEND_API_URL! + "/auth" + "/register"
-      );
-      console.log("sent");
-      const res = await http.post(baseUrl, values);
-      console.log(res);
-    }
+    const baseUrl = new URL(ApiRoutes.auth.register);
+    const res = await http.post(baseUrl, values);
   }
 
   return (

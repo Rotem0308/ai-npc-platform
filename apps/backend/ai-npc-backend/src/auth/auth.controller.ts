@@ -19,8 +19,7 @@ export class AuthController {
   @HttpCode(HttpStatus.CREATED)
   @Post('register')
   async signup(@Body() data: RegisterDTO) {
-    this.authService.register(data);
-    return { message: 'User registered successfully' };
+    return this.authService.register(data);
   }
 
   @HttpCode(HttpStatus.OK)

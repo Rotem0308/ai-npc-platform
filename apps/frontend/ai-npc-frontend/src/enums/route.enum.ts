@@ -11,6 +11,6 @@ export enum ROUTES {
   register = "/register",
   dashboard = "/dashboard",
   contact = "/contact",
-  generator = "/generator",
+  generator = "/npc-generator",
   about = "/about",
 }

@@ -1,4 +1,4 @@
-import { DynamicContentKeysEnum } from '../../enums/dunamic-content-keys.enum';
+import { DynamicContentKeysEnum } from '../../enums/dynamic-content-keys.enum';
 
 export default function replaceDynamicContentWithData(
   content: string,

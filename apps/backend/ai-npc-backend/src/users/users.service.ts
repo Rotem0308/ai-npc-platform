@@ -51,7 +51,6 @@ export class UsersService {
       userData,
       hashedPassword,
     );
-
     const userModel = await this.usersRepository.create(userEntity);
     return this.userMapper.toDomain(userModel);
   }
